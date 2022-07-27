@@ -21,7 +21,7 @@ class Web3Provider extends React.Component {
   }
 
   componentDidMount() {
-    this.tryProvider(window.web3, () => this.tryProvider(Web3.givenProvider, () => {
+    this.tryProvider(window.ethereum, () => this.tryProvider(Web3.givenProvider, () => {
       // Web3 fallback -- always accept
       if (this.props.defaultProvider) {
         this.props.defaultProvider(this.setWeb3.bind(this));
